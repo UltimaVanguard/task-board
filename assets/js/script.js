@@ -1,4 +1,5 @@
 const taskFormEl = $('#task-form');
+const taskDisplayEl = $('#task-display');
 const taskNameInputEl = $('#task-name');
 const taskDueInputEl = $('#due-date');
 const taskDescriptionEl = $('#description');
@@ -160,6 +161,8 @@ $(document).ready(function () {
     };
 
     taskFormEl.on('submit', handleAddTask);
+
+    taskDisplayEl.on('click', '.btn-delete', handleDeleteTask);
 
     $('.lane').droppable({
         accept: '.draggable',
