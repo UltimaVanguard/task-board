@@ -134,7 +134,7 @@ function handleAddTask(event){
 
 // Todo: create a function to handle deleting a task
 function handleDeleteTask(event){
-    const taskId = $(this).attr('task-id');
+    const taskId = $(this).attr('data-task-id');
     const tasks = JSON.parse(localStorage.getItem('tasks'));
 
     tasks.forEach((task, index) => {
