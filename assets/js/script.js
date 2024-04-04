@@ -123,6 +123,10 @@ function handleAddTask(event){
 
     localStorage.setItem('tasks', JSON.stringify(taskList));
 
+    taskNameInputEl.val('');
+    taskDueInputEl.val('');
+    taskDescriptionEl.val('');
+
     renderTaskList();
 }
 
