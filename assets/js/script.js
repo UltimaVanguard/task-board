@@ -8,7 +8,8 @@ let nextId = JSON.parse(localStorage.getItem("nextId"));
 
 // Todo: create a function to generate a unique task id
 function generateTaskId() {
-
+    nextId = crypto.randomUUID();
+    localStorage.setItem("nextId", JSON.stringify(nextId));
 }
 
 // Todo: create a function to create a task card
@@ -51,14 +52,18 @@ function createTaskCard(task) {
     };
 
     cardBody.append(taskDueDate, taskDescription, deleteBtn);
-    taskCard.append(cardBody, cardHeader);
+    taskCard.append(cardHeader, cardBody);
 
     return taskCard
 }
 
 // Todo: create a function to render the task list and make cards draggable
 function renderTaskList() {
-    const tasks = JSON.parse(localStorage.getItem('tasks'));
+    let taskList = JSON.parse(localStorage.getItem('tasks'));
+    
+    if (!taskList) {
+        taskList = [];
+    }
 
     const todoList = $('#todo-cards');
     todoList.empty();
@@ -69,7 +74,7 @@ function renderTaskList() {
     const doneList = $('#done-cards');
     doneList.empty();
 
-    for (let task of tasks) {
+    for (let task of taskList) {
         if (task.status === 'to-do') {
             todoList.append(createTaskCard(task));
         } else if (task.status === 'in-progress') {
@@ -86,7 +91,7 @@ function renderTaskList() {
             const original = $(event.target).hasClass('ui-draggable')
                 ? $(event.target)
                 : $(event.target).closest('.ui-draggable');
-            return original.clone.css({
+            return original.clone().css({
                 width: original.outerWidth(),
             });
         }
@@ -97,6 +102,7 @@ function renderTaskList() {
 function handleAddTask(event){
     event.preventDefault();
 
+    generateTaskId();
     const taskName = taskNameInputEl.val();
     const taskDue = taskDueInputEl.val();
     const taskDescription = taskDescriptionEl.val();
@@ -144,10 +150,6 @@ function handleDrop(event, ui) {
 // Todo: when the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker
 $(document).ready(function () {
     renderTaskList();
-
-    if (!nextId) {
-        generateTaskId();
-    };
 
     if (!taskList) {
         taskList = [];
