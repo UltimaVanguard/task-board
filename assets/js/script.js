@@ -89,13 +89,35 @@ function renderTaskList() {
             return original.clone.css({
                 width: original.outerWidth(),
             });
-        };
+        }
     });
 }
 
 // Todo: create a function to handle adding a new task
 function handleAddTask(event){
+    event.preventDefault();
 
+    const taskName = taskNameInputEl.val();
+    const taskDue = taskDueInputEl.val();
+    const taskDescription = taskDescriptionEl.val();
+
+    const newTask = {
+        id: nextId,
+        name: taskName,
+        dueDate: taskDue,
+        description: taskDescription,
+        status: 'to-do',
+    }
+
+    let taskList = JSON.parse(localStorage.getItem('tasks'));
+    if (!taskList) {
+        taskList = [];
+    }
+    taskList.push(newTask);
+
+    localStorage.setItem('tasks', JSON.stringify(taskList));
+
+    renderTaskList();
 }
 
 // Todo: create a function to handle deleting a task
@@ -130,6 +152,8 @@ $(document).ready(function () {
     if (!taskList) {
         taskList = [];
     };
+
+    taskFormEl.on('submit', handleAddTask);
 
     $('.lane').droppable({
         accept: '.draggable',
