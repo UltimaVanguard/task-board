@@ -103,6 +103,13 @@ function renderTaskList() {
 function handleAddTask(event){
     event.preventDefault();
 
+    if(!taskNameInputEl.val() || 
+       !taskDueInputEl.val() || 
+       !taskDescriptionEl.val()) {
+         alert('Please finish filling out the form.');
+         return;
+    }
+
     generateTaskId();
     const taskName = taskNameInputEl.val();
     const taskDue = taskDueInputEl.val();
