@@ -2,9 +2,7 @@
 
 ## Description
 
-I am creating a personal blog page to keep track of what I am learning in class
-and use it as a way to put down my thoughts on certain subjects, any gotchas. A
-place to keep my thoughts in one place to use as a review for myself later.
+I am creating a task board so I can add the tasks I need to do and keep track of when I need to get them done by. It will also help me keep track of what's done, what I've started, and what I still have to start.
 
 ## Installation
 
