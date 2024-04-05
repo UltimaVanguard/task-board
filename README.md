@@ -22,17 +22,17 @@ Once you are done with a card, you can delete it with the delete button.
 
 Whe you refresh the page, the board will be like you had it when you come back due to being stored in local storage.
 
-<!-- ![alt text](https://github.com/UltimaVanguard/personal-blog/blob/main/assets/images/blog-form.png)
+![alt text](https://github.com/UltimaVanguard/task-board/blob/main/assets/images/task-board.png)
 
-![alt text](https://github.com/UltimaVanguard/personal-blog/blob/main/assets/images/blog-form-dark.png)
+![alt text](https://github.com/UltimaVanguard/task-board/blob/main/assets/images/modal.png)
 
-![alt text](https://github.com/UltimaVanguard/personal-blog/blob/main/assets/images/alert.png)
+![alt text](https://github.com/UltimaVanguard/task-board/blob/main/assets/images/alert.png)
 
-![alt text](https://github.com/UltimaVanguard/personal-blog/blob/main/assets/images/local-storage.png)
+![alt text](https://github.com/UltimaVanguard/task-board/blob/main/assets/images/task-board-filled.png)
 
-![alt text](https://github.com/UltimaVanguard/personal-blog/blob/main/assets/images/blog-entries.png)
+![alt text](https://github.com/UltimaVanguard/task-board/blob/main/assets/images/task-board-moved.png)
 
-![alt text](https://github.com/UltimaVanguard/personal-blog/blob/main/assets/images/footer.png) -->
+![alt text](https://github.com/UltimaVanguard/task-board/blob/main/assets/images/task-board-deleted.png)
 
 ## Credits
 
